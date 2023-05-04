@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Bio: React.FC = () => {
-    console.log(process.env.PUBLIC_URL);
     return (
         <div>
             <h2>My Bio</h2>
