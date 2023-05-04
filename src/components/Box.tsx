@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import { Mesh } from 'three';
-import { useFrame } from '@react-three/fiber';
+import { MeshProps, useFrame } from '@react-three/fiber';
 
-
-interface BoxProps {
-    position: [number, number, number];
+interface BoxProps extends MeshProps {
+    boxColor: string;
 }
 
 export const Box: React.FC<BoxProps> = (props) => {
@@ -19,7 +18,7 @@ export const Box: React.FC<BoxProps> = (props) => {
     return (
         <mesh {...props} ref={ref}>
             <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color='orange' />
+            <meshStandardMaterial color={props.boxColor} />
         </mesh >
     )
 }
