@@ -12,18 +12,23 @@ export const ObjectRenderMenu: React.FC<MenuProps> = ({ handleColorChange }) => 
         <div>
             <ul>
                 <li>
-                    <a href="/red" onClick={(event) => handleColorChange(event, 'red')}>
-                        Red
+                    <a href="/orange" onClick={(event) => handleColorChange(event, 'orange')}>
+                        Orange
                     </a>
                 </li>
                 <li>
-                    <a href="/green" onClick={(event) => handleColorChange(event, 'green')}>
-                        Green
+                    <a href="/crimson" onClick={(event) => handleColorChange(event, 'crimson')}>
+                        Crimson
                     </a>
                 </li>
                 <li>
-                    <a href="/blue" onClick={(event) => handleColorChange(event, 'blue')}>
-                        Blue
+                    <a href="/teal" onClick={(event) => handleColorChange(event, 'teal')}>
+                        Teal
+                    </a>
+                </li>
+                <li>
+                    <a href="/steelblue" onClick={(event) => handleColorChange(event, 'steelblue')}>
+                        Steelblue
                     </a>
                 </li>
             </ul>

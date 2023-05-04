@@ -6,11 +6,21 @@ import { ObjectRenderMenu } from '../components/ObjectRenderMenu';
 import * as THREE from 'three';
 
 const Home: React.FC = () => {
-    const [currentColor, setCurrentColor] = useState('orange');
+    const colorMap: { [key: string]: THREE.Color } = {
+        orange: new THREE.Color(0xffa500),
+        crimson: new THREE.Color(0xdc143c),
+        teal: new THREE.Color(0x008080),
+        steelblue: new THREE.Color(0x4682b4)
+    };
+
+    const [currentColor, setCurrentColor] = useState<string>('orange');
 
     const handleColorChange = (event: React.MouseEvent<HTMLAnchorElement>, color: string) => {
         event.preventDefault();
-        setCurrentColor(color);
+        console.log(color);
+        if (colorMap[color]) {
+            setCurrentColor(color);
+        }
     };
 
     return (
@@ -21,7 +31,7 @@ const Home: React.FC = () => {
                 <ambientLight intensity={0.5} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <pointLight position={[-10, -10, -10]} />
-                <Box position={[0, 0, 0]} boxColor={currentColor} />
+
                 <Sphere position={[0, 0, 0]} currentColor={new THREE.Color(currentColor)} />
             </Canvas>
         </div>
