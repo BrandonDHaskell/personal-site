@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Box } from '../components/Box';
 import Sphere from '../components/Sphere';
 import { ObjectRenderMenu } from '../components/ObjectRenderMenu';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 const Home: React.FC = () => {
@@ -17,7 +17,6 @@ const Home: React.FC = () => {
 
     const handleColorChange = (event: React.MouseEvent<HTMLAnchorElement>, color: string) => {
         event.preventDefault();
-        console.log(color);
         if (colorMap[color]) {
             setCurrentColor(color);
         }
@@ -31,8 +30,8 @@ const Home: React.FC = () => {
                 <ambientLight intensity={0.5} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <pointLight position={[-10, -10, -10]} />
-
-                <Sphere position={[0, 0, 0]} currentColor={new THREE.Color(currentColor)} />
+                <OrbitControls autoRotate enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2.8} maxPolarAngle={Math.PI / 2.8} />
+                <Sphere position={[0, 0, 0]} currentColor={colorMap[currentColor]} />
             </Canvas>
         </div>
     );

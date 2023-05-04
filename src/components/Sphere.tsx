@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -8,11 +8,20 @@ interface SphereProps {
 };
 
 const Sphere: React.FC<SphereProps> = ({ currentColor, position }) => {
-    const { scene } = useGLTF('assets/3dModels/sphere.glb') as any;
+    const { scene } = useGLTF('assets/3dModels/cube.glb') as any;
     const meshRef = useRef<THREE.Mesh>();
+    const [ready, setReady] = useState<boolean>(false);
 
-    useLayoutEffect(() => {
-        if (meshRef.current) {
+    useEffect(() => {
+        if (scene.children[0]) {
+            const mesh = scene.children[0] as THREE.Mesh;
+            meshRef.current = mesh;
+            setReady(true);
+        }
+    }, [scene]);
+
+    useEffect(() => {
+        if (ready && meshRef.current) {
             const material = new THREE.MeshStandardMaterial({
                 roughness: 0,
                 metalness: 0.25,
@@ -23,15 +32,15 @@ const Sphere: React.FC<SphereProps> = ({ currentColor, position }) => {
 
             meshRef.current.material = material;
         }
-    }, [currentColor]);
+    }, [ready, currentColor]);
 
-    return (
+    return ready ? (
         <primitive
             ref={meshRef}
             object={scene.children[0]}
             position={position}
         />
-    );
+    ) : null;
 };
 
 export default Sphere;
