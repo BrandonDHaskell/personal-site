@@ -31,7 +31,7 @@ const Home: React.FC = () => {
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <pointLight position={[-10, -10, -10]} />
                 <OrbitControls autoRotate enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2.8} maxPolarAngle={Math.PI / 2.8} />
-                <Sphere position={[0, 0, 0]} currentColor={colorMap[currentColor]} />
+                <Sphere position={[0, 0, 0]} currentColor={colorMap[currentColor]} scale={2} />
             </Canvas>
         </div>
     );

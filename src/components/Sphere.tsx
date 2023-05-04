@@ -5,10 +5,11 @@ import * as THREE from 'three';
 interface SphereProps {
     currentColor: THREE.Color;
     position: [number, number, number];
+    scale: number;
 };
 
-const Sphere: React.FC<SphereProps> = ({ currentColor, position }) => {
-    const { scene } = useGLTF('assets/3dModels/cube.glb') as any;
+const Sphere: React.FC<SphereProps> = ({ currentColor, position, scale }) => {
+    const { scene } = useGLTF('assets/3dModels/sphere.glb') as any;
     const meshRef = useRef<THREE.Mesh>();
     const [ready, setReady] = useState<boolean>(false);
 
@@ -39,6 +40,7 @@ const Sphere: React.FC<SphereProps> = ({ currentColor, position }) => {
             ref={meshRef}
             object={scene.children[0]}
             position={position}
+            scale={[scale, scale, scale]}
         />
     ) : null;
 };
