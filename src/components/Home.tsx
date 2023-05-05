@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Sphere from '../components/Sphere';
 import { ObjectRenderMenu } from '../components/ObjectRenderMenu';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-const Home: React.FC = () => {
-    const colorMap: { [key: string]: THREE.Color } = {
-        orange: new THREE.Color(0xffa500),
-        crimson: new THREE.Color(0xdc143c),
-        teal: new THREE.Color(0x008080),
-        steelblue: new THREE.Color(0x4682b4)
-    };
+const colorMap: { [key: string]: THREE.Color } = {
+    orange: new THREE.Color(0xffa500),
+    crimson: new THREE.Color(0xdc143c),
+    teal: new THREE.Color(0x008080),
+    steelblue: new THREE.Color(0x4682b4)
+};
 
+const Home: React.FC = () => {
     const [currentColor, setCurrentColor] = useState<string>('orange');
 
     const handleColorChange = (event: React.MouseEvent<HTMLAnchorElement>, color: string) => {
@@ -31,7 +31,9 @@ const Home: React.FC = () => {
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <pointLight position={[-10, -10, -10]} />
                 <OrbitControls autoRotate enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2.8} maxPolarAngle={Math.PI / 2.8} />
-                <Sphere position={[0, 0, 0]} currentColor={colorMap[currentColor]} scale={2} />
+                <Suspense>
+                    <Sphere position={[0, 0, 0]} currentColor={colorMap[currentColor]} scale={2} />
+                </Suspense>
             </Canvas>
         </div>
     );
