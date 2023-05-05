@@ -1,36 +1,37 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
-import * as THREE from 'three';
+import { Mesh, MeshStandardMaterial, Color } from 'three';
 
 interface SphereProps {
-    currentColor: THREE.Color;
+    currentColor: Color;
     position: [number, number, number];
     scale: number;
 };
 
 const Sphere: React.FC<SphereProps> = ({ currentColor, position, scale }) => {
     const { scene } = useGLTF('assets/3dModels/sphere.glb') as any;
-    const meshRef = useRef<THREE.Mesh>();
+    const meshRef = useRef<Mesh>();
     const [ready, setReady] = useState<boolean>(false);
 
+    // track when the mesh is ready
     useEffect(() => {
         if (scene.children[0]) {
-            const mesh = scene.children[0] as THREE.Mesh;
+            const mesh = scene.children[0] as Mesh;
             meshRef.current = mesh;
             setReady(true);
         }
     }, [scene]);
 
+    // track when the material is ready or updated
     useEffect(() => {
         if (ready && meshRef.current) {
-            const material = new THREE.MeshStandardMaterial({
+            const material = new MeshStandardMaterial({
                 roughness: 0,
                 metalness: 0.25,
-                emissive: new THREE.Color(0x000000),
+                emissive: new Color(0x000000),
                 color: currentColor,
                 envMapIntensity: 0.5
             });
-
             meshRef.current.material = material;
         }
     }, [ready, currentColor]);
