@@ -25,8 +25,8 @@ const EmailMe: React.FC = () => {
     };
 
     return (
-        <div>
-            <h1>Email Me</h1>
+        <section>
+            <h2 className="mb-8 mt-8 text-4xl font-bold md:text-5xl lg:text-6xl dark:text-sky-500">Email Me</h2>
             {emailSent ? (
                 <div>
                     <p>Email sent successfully!</p>
@@ -51,7 +51,7 @@ const EmailMe: React.FC = () => {
                     <button type="submit">Send</button>
                 </form>
             )}
-        </div>
+        </section>
     );
 };
 
