@@ -1,5 +1,5 @@
 import React from 'react';
-import ExperienceList from '../components/ExperienceList';
+import ExperienceList from './ExperienceList';
 
 const Bio: React.FC = () => {
     return (
