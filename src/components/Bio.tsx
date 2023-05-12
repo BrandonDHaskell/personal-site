@@ -7,7 +7,7 @@ const Bio: React.FC = () => {
             <h2 className="mb-8 mt-8 text-4xl font-bold md:text-5xl lg:text-6xl dark:text-sky-500">About</h2>
             <div className="flex items-center justify-center">
                 <div className="relative rounded-full overflow-hidden border-8 border-sky-600 mx-8">
-                    <img src={`images/profile_pic_2_medium.jpg`} alt="Profile pic" />
+                    <img src={`personal-site/images/profile_pic_2_medium.jpg`} alt="Profile pic" />
                 </div>
             </div>
             <div>
