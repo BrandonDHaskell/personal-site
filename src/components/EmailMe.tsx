@@ -36,22 +36,35 @@ const EmailMe: React.FC = () => {
                 </div>
             ) : (
                 <form onSubmit={sendEmail}>
-                    <div>
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" name="name" required />
+                    <div className="flex justify-center outline-sky-500">
+                        <div className="text-sky-500 px-2">
+                            <label htmlFor="name">Name</label>
+                        </div>
+                        <div>
+                            <input type="text" id="name" name="name" required className="border-2 rounded border-slate-300 text-sky-500 px-2 m-2" />
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" required />
+                    <div className="flex justify-center outline-sky-500">
+                        <div className="text-sky-500 px-2">
+                            <label htmlFor="email">Email</label>
+                        </div>
+                        <div className="text-sky-500 px-2">
+                            <input type="email" id="email" name="email" required className="border-2 rounded border-slate-300 text-sky-500 px-2 m-2" />
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="message">Message</label>
-                        <textarea id="message" name="message" rows={5} required />
+                    <div className="flex justify-center outline-sky-500">
+                        <div className="text-sky-500 px-2">
+                            <label htmlFor="message">Message</label>
+                        </div>
+                        <div className="text-sky-500 px-2">
+                            <textarea id="message" name="message" rows={5} required className="border-2 rounded border-slate-300 text-sky-500 px-2 m-2" />
+                        </div>
                     </div>
-                    <button type="submit">Send</button>
+                    <button type="submit" className="m-2 px-4 py-2 font-semibold text-sm bg-white text-slate-700 border border-slate-300 rounded-md shadow-sm outline outline-2 outline-offset-0 outline-sky-500 dark:bg-slate-700 dark:text-slate-200 dark:border-transparent">Send</button>
                 </form>
-            )}
-        </section>
+            )
+            }
+        </section >
     );
 };
 
