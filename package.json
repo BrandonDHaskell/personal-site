@@ -1,6 +1,7 @@
 {
     "name": "personal-site",
     "version": "0.1.0",
+    "homepage": "https://brandondhaskell.github.io/personal-site/",
     "private": true,
     "scripts": {
         "start": "react-scripts start",
@@ -8,7 +9,7 @@
         "build:css": "postcss src/index.css -o build/index.css",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "predeploy": "npm run build",
+        "predeploy": "npm run build && npm run build:css",
         "deploy": "gh-pages -d build"
     },
     "dependencies": {
