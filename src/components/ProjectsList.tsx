@@ -14,7 +14,7 @@ const projects: Project[] = [
     {
         name: "Password Generator",
         summary: "Generate a random password with to meet your criteria",
-        imgUrl: "personal-site/images/pswd-generator.png",
+        imgUrl: "images/pswd-generator.png",
         liveSiteUrl: "https://BrandonDHaskell.github.io/pswd-generator/",
         sourceCodeUrl: "https://github.com/BrandonDHaskell/pswd-generator/",
         techList: ["HTML5", "JavaScript", "CSS"]
@@ -22,7 +22,7 @@ const projects: Project[] = [
     {
         name: "Know Your Government",
         summary: "Get to know your government representation based on your location",
-        imgUrl: "personal-site/images/know-your-government.png",
+        imgUrl: "images/know-your-government.png",
         liveSiteUrl: "https://BrandonDHaskell.github.io/know-your-government/",
         sourceCodeUrl: "https://github.com/BrandonDHaskell/know-your-government/",
         techList: ["HTML5", "JavaScript", "CSS", "D3.js", "Bulma", "Axios"]
@@ -30,7 +30,7 @@ const projects: Project[] = [
     {
         name: "Daily Scheduler",
         summary: "Enter in your daily schedule for the current day and track your progress",
-        imgUrl: "personal-site/images/day-scheduler.png",
+        imgUrl: "images/day-scheduler.png",
         liveSiteUrl: "https://BrandonDHaskell.github.io/day-scheduler/",
         sourceCodeUrl: "https://github.com/BrandonDHaskell/day-scheduler/",
         techList: ["HTML5", "JavaScript", "CSS", "JQuery", "DayJS"]
@@ -38,7 +38,7 @@ const projects: Project[] = [
     {
         name: "Quiz Time",
         summary: "Select a category, take your quiz, and track your scores",
-        imgUrl: "personal-site/images/quiz-time.png",
+        imgUrl: "images/quiz-time.png",
         liveSiteUrl: "https://BrandonDHaskell.github.io/quiz-time/",
         sourceCodeUrl: "https://github.com/BrandonDHaskell/quiz-time/",
         techList: ["HTML5", "JavaScript", "CSS", "JQuery"]
@@ -46,7 +46,7 @@ const projects: Project[] = [
     {
         name: "Weather Planner",
         summary: " Enter in a city name and select the country then click search. See the weather all around the world if you want to!",
-        imgUrl: "personal-site/images/weather-planner.png",
+        imgUrl: "images/weather-planner.png",
         liveSiteUrl: "https://BrandonDHaskell.github.io/weather-planner/",
         sourceCodeUrl: "https://github.com/BrandonDHaskell/weather-planner/",
         techList: ["HTML5", "JavaScript", "CSS", "JQuery", "DayJS", "APIs"]
