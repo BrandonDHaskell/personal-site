@@ -48,7 +48,7 @@ const EmailMe: React.FC = () => {
                         <div className="text-sky-500 px-2">
                             <label htmlFor="email">Email</label>
                         </div>
-                        <div className="text-sky-500 px-2">
+                        <div className="text-sky-500 px-2"> 
                             <input type="email" id="email" name="email" required className="border-2 rounded border-slate-300 text-sky-500 px-2 m-2" />
                         </div>
                     </div>

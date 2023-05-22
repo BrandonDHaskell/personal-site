@@ -9,7 +9,7 @@ import './App.css';
 
 const App: React.FC = () => {
     return (
-        <Router>
+        <Router basename="/personal-site">
             <div className="App">
                 <Header />
                 <Routes>
